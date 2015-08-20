@@ -30,8 +30,18 @@ public class PlayerTest {
     testDeck.removeTopCard();
     Card testCard = new Card("Spades","Ace");
 
-    testPlayer.removeFromHand(testCard);
+    testPlayer.removeCard(testCard);
     assertEquals(2, testPlayer.getHand().size());
+  }
+
+  @Test
+  public void player_findCardFindsCard_true() {
+    Player testPlayer = new Player("Bob");
+    Deck testDeck = new Deck();
+    Card testCard = new Card("Spades","4");
+    testPlayer.addToHand(testCard);
+
+    assertEquals(true, testPlayer.findCard(testCard));
   }
 
 }

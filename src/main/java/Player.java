@@ -16,7 +16,11 @@ class Player {
     mHand.add(card);
   }
 
-  public void removeFromHand(Card card) {
+  public boolean findCard(Card card){
+    return mHand.contains(card);
+  }
+
+  public void removeCard(Card card) {
     int count = 0;
     for (Card handCard : mHand) {
       if (handCard.getName().equals(card.getName())) {
