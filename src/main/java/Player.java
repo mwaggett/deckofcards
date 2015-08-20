@@ -16,6 +16,17 @@ class Player {
     mHand.add(card);
   }
 
+  public void removeFromHand(Card card) {
+    int count = 0;
+    for (Card handCard : mHand) {
+      if (handCard.getName().equals(card.getName())) {
+        mHand.remove(count);
+        break;
+      }
+      count ++;
+    }
+  }
+
   public ArrayList<Card> getHand(){
     return mHand;
   }
