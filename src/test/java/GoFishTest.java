@@ -71,7 +71,34 @@ public class GoFishTest {
     assertEquals(2, testPlayer1.getHand().size());
   }
 
+  @Test
+  public void goFish_collectPairsCollectsAPair_true() {
+    GoFish testFish = new GoFish(2);
+    ArrayList<Player> testPlayers = testFish.getPlayers();
+    testFish.deal();
+    Player testPlayer1 = testPlayers.get(0);
+    Player testPlayer2 = testPlayers.get(1);
 
+    Card testCard1 = new Card("Hearts", "Ace");
+    Card testCard2 = new Card("Clubs", "Ace");
+
+    testPlayer2.addToHand(testCard1);
+    testPlayer2.addToHand(testCard2);
+
+    assertEquals(true, testFish.collectPairs(testPlayer2));
+  }
+
+  @Test
+  public void goFish_getWinnerReturnsWinner_true() {
+    GoFish testFish = new GoFish(2);
+    ArrayList<Player> testPlayers = testFish.getPlayers();
+    Player testPlayer1 = testPlayers.get(0);
+    Player testPlayer2 = testPlayers.get(1);
+    testPlayer1.addToScore(3);
+    testPlayer2.addToScore(5);
+
+    assertEquals(testPlayer2, testFish.getWinner());
+  }
 
 
 }

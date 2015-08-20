@@ -5,11 +5,21 @@ class Player {
 
   private String mName;
   private ArrayList<Card> mHand;
+  private int mScore;
 
   public Player(String name){
     mName = name;
     mHand = new ArrayList<Card>();
+    mScore = 0;
 
+  }
+
+  public int getScore(){
+    return mScore;
+  }
+
+  public void addToScore(int add){
+    mScore = mScore + add;
   }
 
   public void addToHand(Card card){
