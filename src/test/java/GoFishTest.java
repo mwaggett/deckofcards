@@ -100,5 +100,16 @@ public class GoFishTest {
     assertEquals(testPlayer2, testFish.getWinner());
   }
 
+  @Test
+  public void goFish_nextTurnChangesActivePlayer_true() {
+    GoFish testFish = new GoFish(2);
+    ArrayList<Player> testPlayers = testFish.getPlayers();
+    Player testPlayer1 = testPlayers.get(0);
+    Player testPlayer2 = testPlayers.get(1);
+    testFish.nextTurn();
+
+    assertEquals(testPlayer2, testFish.whoseTurn());
+  }
+
 
 }

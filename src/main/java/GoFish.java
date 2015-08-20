@@ -5,6 +5,8 @@ public class GoFish {
   private int mNumberOfPlayers;
   private ArrayList<Player> mPlayers;
   private Deck mDeck;
+  private int mTurn = 0;
+  private Player mActivePlayer;
 
   public GoFish(int numberOfPlayers) {
     mPlayers = new ArrayList<Player>();
@@ -15,10 +17,20 @@ public class GoFish {
     }
     mDeck = new Deck();
     mDeck.shuffle();
+    mActivePlayer = mPlayers.get(mTurn);
+  }
+
+  public void nextTurn(){
+    mTurn = (mTurn + 1) % mPlayers.size();
+    mActivePlayer = mPlayers.get(mTurn);
   }
 
   public ArrayList<Player> getPlayers(){
     return mPlayers;
+  }
+
+  public Player whoseTurn() {
+    return mActivePlayer;
   }
 
   public void deal() {
@@ -71,6 +83,7 @@ public class GoFish {
         current.addToHand(card);
       }
     }
+    nextTurn();
   }
 
   public Player getWinner() {
