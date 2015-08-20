@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Card {
 
   private String mSuit;
@@ -16,7 +18,7 @@ public class Card {
     return mValue;
   }
 
-  public String name() {
+  public String getName() {
     return String.format("%s of %s", mValue, mSuit);
   }
 }

@@ -22,8 +22,8 @@ public class CardTest {
   }
 
   @Test
-  public void name_returnsAFormattedNameForCard_AceOfSpades() {
+  public void getName_returnsAFormattedNameForCard_AceOfSpades() {
     Card testCard = new Card("Spades", "Ace");
-    assertEquals("Ace of Spades", testCard.name());
+    assertEquals("Ace of Spades", testCard.getName());
   }
 }
