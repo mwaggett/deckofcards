@@ -41,4 +41,8 @@ class Deck {
     }
   }
 
+  public boolean isEmpty() {
+    return (mCards.size() == 0);
+  }
+
 }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.io.Console;
 
 public class GoFish {
 
@@ -18,6 +19,26 @@ public class GoFish {
     mDeck = new Deck();
     mDeck.shuffle();
     mActivePlayer = mPlayers.get(mTurn);
+  }
+
+  public void play(){
+    deal();
+    while(!mDeck.isEmpty()){
+      Console myConsole = System.console();
+      System.out.printf("%s's turn. %n",mActivePlayer.getName());
+      String hand = mActivePlayer.displayHand();
+      System.out.printf("Here is your hand: %s %n", hand);
+      System.out.printf("Ask who? %n");
+      int askedInt = Integer.parseInt(myConsole.readLine());
+      Player askedPlayer = mPlayers.get(askedInt);
+
+      System.out.printf("Ask for what? %n");
+      String value = myConsole.readLine();
+
+      turn(mActivePlayer,askedPlayer,value);
+    }
+    System.out.printf("%s wins!", getWinner().getName());
+
   }
 
   public void nextTurn(){
@@ -76,6 +97,7 @@ public class GoFish {
   public void turn(Player current, Player asked, String value){
     ArrayList<Card> matchCards = collectMatches(value, asked);
     if (matchCards.size() == 0) {
+      System.out.println("Go fish!");
       goFish(current);
     } else {
       for (Card card : matchCards){
@@ -83,8 +105,10 @@ public class GoFish {
         current.addToHand(card);
       }
     }
+    collectPairs(current);
     nextTurn();
   }
+  //^^Not passing test for adding to hand.
 
   public Player getWinner() {
     Player winner = mPlayers.get(0);

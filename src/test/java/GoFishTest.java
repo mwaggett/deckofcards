@@ -68,7 +68,7 @@ public class GoFishTest {
     testFish.turn(testPlayer1,testPlayer2,"Ace");
 
     assertEquals(0, testPlayer2.getHand().size());
-    assertEquals(2, testPlayer1.getHand().size());
+    assertEquals(2, testPlayer1.getHand().size()); //currently failing
   }
 
   @Test

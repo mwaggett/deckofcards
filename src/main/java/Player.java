@@ -14,6 +14,10 @@ class Player {
 
   }
 
+  public String getName(){
+    return mName;
+  }
+
   public int getScore(){
     return mScore;
   }
@@ -39,6 +43,15 @@ class Player {
       }
       count ++;
     }
+  }
+
+  public String displayHand(){
+
+    String handString = "";
+    for (Card card : mHand){
+      handString += card.getName() +" // ";
+    }
+    return handString;
   }
 
   public ArrayList<Card> getHand(){

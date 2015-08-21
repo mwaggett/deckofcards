@@ -39,4 +39,20 @@ public class DeckTest {
     testDeck.deal(testPlayer,2);
     assertEquals(2, testPlayer.getHand().size());
   }
+
+  @Test
+  public void isEmpty_true() {
+    Deck testDeck = new Deck();
+    Player testPlayer = new Player("Bob");
+    testDeck.deal(testPlayer,52);
+    assertEquals(true, testDeck.isEmpty());
+  }
+
+  @Test
+  public void isEmpty_false() {
+    Deck testDeck = new Deck();
+    Player testPlayer = new Player("Bob");
+    testDeck.deal(testPlayer,5);
+    assertEquals(false, testDeck.isEmpty());
+  }
 }
