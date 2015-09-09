@@ -17,7 +17,7 @@ Go Fish game to be played in the console. _**Very unfinished and doesn't really 
 javac ConsolePlay.java
 java ConsolePlay
 ```
-*Play! _(Note: When console says 'Ask who?', in order to specify which player to ask, you must type one less than the player number you wish to ask, e.g. to ask player 2, type '1'.)_
+* Play! _(Note: When console says 'Ask who?', in order to specify which player to ask, you must type one less than the player number you wish to ask, e.g. to ask player 2, type '1'.)_
 
 ## Technologies Used
 
