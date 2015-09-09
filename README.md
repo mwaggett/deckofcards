@@ -1,32 +1,32 @@
-# _{Application Name}_
+# Go Fish ~UNFINISHED~
 
-##### _{Brief description of application}, {Date of current version}_
+##### _Objects in Objects practice for Epicodus, 20 August 2015_
 
-#### By _**{List of contributors}**_
+#### By **Daryl Seaver & Molly Waggett**
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. Do you want other developers to use this code in their apps? Talk about things like that here in simple terms.}_
+Go Fish game to be played in the console. _**Very unfinished and doesn't really do what it's supposed to yet. Repo also contains commented out files for ultimately turning this game into a web app.**_
 
 ## Setup
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Are there other applications this app depends on?}_
+* Clone this repository.
+* Using the command line, navigate to src/main/java within the project folder.
+* Then run the following commands:
+```
+javac ConsolePlay.java
+java ConsolePlay
+```
+*Play! _(Note: When console says 'Ask who?', in order to specify which player to ask, you must type one less than the player number you wish to ask, e.g. to ask player 2, type '1'.)_
 
 ## Technologies Used
 
-_{Tell me about the languages you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+* Java
+* JUnit
 
 ### Legal
 
-*{This is boilerplate legal language. Read through it, and if you like it, use it. There are other license agreements online, but you can generally copy and paste this.}*
-
-Copyright (c) 2015 **_{List of contribtors}_**
+Copyright (c) 2015 **Daryl Seaver & Molly Waggett**
 
 This software is licensed under the MIT license.
 
